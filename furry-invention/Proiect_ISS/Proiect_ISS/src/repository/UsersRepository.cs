@@ -11,14 +11,15 @@ namespace Proiect_ISS
     class UsersRepository : Repository<User, String>
     {
         private Dictionary<String, User> data;
-        private String connetionString = @"Data Source=REMUS; Initial Catalog=ISS; Integrated Security=true";
+        private String connectionString = @"Data Source=desktop-uc392eu\sqlexpress; Initial Catalog=ISS; Integrated Security=true";
 
         public UsersRepository()
         {
             data = new Dictionary<string, User>();
             SqlConnection cnn;
             
-            cnn = new SqlConnection(connetionString);
+            // Estabilish connection with SQL Server
+            cnn = new SqlConnection(connectionString);
             cnn.Open();
 
             String SQL = "SELECT * FROM ConferenceMember";
@@ -48,7 +49,7 @@ namespace Proiect_ISS
 
         public void add(User e)
         {
-            using (SqlConnection cnn = new SqlConnection(connetionString))
+            using (SqlConnection cnn = new SqlConnection(connectionString))
             {
                 String SQL = "INSERT INTO ConferenceMember VALUES(@1,@2,@3,@4,@5,@6)";
                 cnn.Open();
@@ -71,7 +72,7 @@ namespace Proiect_ISS
         public void remove(String e)
         {
 
-            using (SqlConnection cnn = new SqlConnection(connetionString))
+            using (SqlConnection cnn = new SqlConnection(connectionString))
             {
                 String SQL = "DELETE FROM ConferenceMember WHERE username=@1";
                 cnn.Open();
@@ -88,7 +89,7 @@ namespace Proiect_ISS
 
         public void update(User e)
         {
-            using (SqlConnection cnn = new SqlConnection(connetionString))
+            using (SqlConnection cnn = new SqlConnection(connectionString))
             {
                 String SQL = "UPDATE ConferenceMember SET password=@2, name=@3, affiliation=@4, email=@5, rank=@6 WHERE username=@1";
                 cnn.Open();
@@ -107,8 +108,6 @@ namespace Proiect_ISS
                 }
                 cnn.Close();
             }
-
-            
         }
 
         public User find(String e)

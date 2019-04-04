@@ -115,7 +115,7 @@ namespace Proiect_ISS
                     break;
             }
 
-            return r + ": " + name + "(" + username + ") " + affiliation + " " + email;
+            return r + ": " + name + "; (" + username + "); " + affiliation + "; " + email;
         }
         
     }
