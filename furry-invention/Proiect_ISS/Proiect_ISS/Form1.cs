@@ -37,5 +37,15 @@ namespace Proiect_ISS
         {
 
         }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            String user = usernameTextBox.Text;
+            String password = passwordTextBox.Text;
+            MessageBox.Show("Moving on");
+            this.Hide();
+            Form2 f2 = new Form2();
+            f2.ShowDialog();
+        }
     }
 }
