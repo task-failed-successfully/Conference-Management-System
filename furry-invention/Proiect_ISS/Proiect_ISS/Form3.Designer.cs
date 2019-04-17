@@ -75,6 +75,7 @@
             this.createBtn.TabIndex = 3;
             this.createBtn.Text = "Create";
             this.createBtn.UseVisualStyleBackColor = true;
+            this.createBtn.Click += new System.EventHandler(this.createBtn_Click);
             // 
             // abortBtn
             // 
@@ -85,6 +86,7 @@
             this.abortBtn.TabIndex = 4;
             this.abortBtn.Text = "Abort";
             this.abortBtn.UseVisualStyleBackColor = true;
+            this.abortBtn.Click += new System.EventHandler(this.abortBtn_Click);
             // 
             // dataGridView1
             // 

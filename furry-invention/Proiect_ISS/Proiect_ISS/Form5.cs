@@ -16,5 +16,13 @@ namespace Proiect_ISS
         {
             InitializeComponent();
         }
+
+        private void backBtn_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Aborting the selection, Returning to Main Menu.");
+            this.Hide();
+            Form2 f2 = new Form2();
+            f2.ShowDialog();
+        }
     }
 }

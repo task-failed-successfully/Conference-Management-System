@@ -21,5 +21,19 @@ namespace Proiect_ISS
         {
             this.Close();
         }
+
+        private void newBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form3 f3 = new Form3();
+            f3.ShowDialog();
+        }
+
+        private void chooseBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form5 f5 = new Form5();
+            f5.ShowDialog();
+        }
     }
 }

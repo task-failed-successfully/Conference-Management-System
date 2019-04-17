@@ -16,5 +16,21 @@ namespace Proiect_ISS
         {
             InitializeComponent();
         }
+
+        private void abortBtn_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Aborting the creation, Returning to Main Menu.");
+            this.Hide();
+            Form2 f2 = new Form2();
+            f2.ShowDialog();
+        }
+
+        private void createBtn_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Conference Creation Succesful");
+            this.Hide();
+            Form2 f2 = new Form2();
+            f2.ShowDialog();
+        }
     }
 }

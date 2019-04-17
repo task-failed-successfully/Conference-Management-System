@@ -12,7 +12,7 @@ namespace Proiect_ISS
         {
             InitializeComponent();
 
-            Repository<User, String> repo = new UsersRepository();
+            /*Repository<User, String> repo = new UsersRepository();
             Validator<User> validator = new UserValidator();
 
             Controller ctrl = new Controller(repo, validator);
@@ -30,7 +30,7 @@ namespace Proiect_ISS
             catch (Exception e)
             {
                 MessageBox.Show(e.Message);
-            }
+            }*/
         }
 
         private void Form1_Load(object sender, EventArgs e)

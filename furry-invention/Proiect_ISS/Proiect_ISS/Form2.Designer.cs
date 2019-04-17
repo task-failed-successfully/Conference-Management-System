@@ -53,6 +53,7 @@
             this.newBtn.TabIndex = 1;
             this.newBtn.Text = "Create Conference";
             this.newBtn.UseVisualStyleBackColor = true;
+            this.newBtn.Click += new System.EventHandler(this.newBtn_Click);
             // 
             // chooseBtn
             // 
@@ -63,6 +64,7 @@
             this.chooseBtn.TabIndex = 2;
             this.chooseBtn.Text = "Choose Conference";
             this.chooseBtn.UseVisualStyleBackColor = true;
+            this.chooseBtn.Click += new System.EventHandler(this.chooseBtn_Click);
             // 
             // exitBtn
             // 
