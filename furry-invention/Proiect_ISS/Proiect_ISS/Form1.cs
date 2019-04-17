@@ -16,10 +16,15 @@ namespace Proiect_ISS
         {
             InitializeComponent();
 
-            UsersRepository repo = new UsersRepository();
-            //repo.add(new User("U2", "P2", "N2", "A2", "u2@u2.u2", 2));
-            repo.update(new User("U2", "U2", "U2", "U2", "u2@u2.u2", 3));
-            repo.ToString();
+            //UsersRepository repo = new UsersRepository();
+            //repo.add(new User("U10", "P10", "N10", "A10", "u10@u10.u10", 2));
+            //repo.update(new User("U2", "U20", "U20", "U20", "u2@u2.u2", 3));
+            //repo.ToString();
+
+            Conference c = new Conference(110, "");
+            c.createConference();
+            c.createTables();
+
         }
     }
 }
