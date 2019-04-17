@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ed236979bbed498388281dd62a11e0e2" Name="Diagram1">
+        <EntityTypeShape EntityType="Conference100Model.Account" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="Conference100Model.AccountSection" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Conference100Model.Deadline" Width="1.5" PointX="5.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Conference100Model.Keyword" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Conference100Model.Proposal" Width="1.5" PointX="3.125" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Conference100Model.Review" Width="1.5" PointX="7" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Conference100Model.Section" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Conference100Model.Topic" Width="1.5" PointX="7.125" PointY="0.625" IsExpanded="true" />
+        <AssociationConnector Association="Conference100Model.FK__AccountSect__AID__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="Conference100Model.FK__Review__AID__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="Conference100Model.FK__AccountSect__SID__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="Conference100Model.FK__Review__PID__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="Conference100Model.ProposalAccount" ManuallyRouted="false" />
+        <AssociationConnector Association="Conference100Model.ProposalKeyword" ManuallyRouted="false" />
+        <AssociationConnector Association="Conference100Model.ProposalTopic" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

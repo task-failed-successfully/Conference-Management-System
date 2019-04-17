@@ -8,18 +8,17 @@ using System.Windows.Forms;
 
 namespace Proiect_ISS
 {
-    class UsersRepository : Repository<User, String>
+    class ConferenceMembersRepository : Repository<Account, String>
     {
-        private Dictionary<String, User> data;
-        private String connectionString = @"Data Source=desktop-uc392eu\sqlexpress; Initial Catalog=ISS; Integrated Security=true";
+        private Dictionary<String, Account> data;
+        private String connetionString = @"Data Source=REMUS; Initial Catalog=ISS; Integrated Security=true";
 
-        public UsersRepository()
+        public ConferenceMembersRepository()
         {
-            data = new Dictionary<string, User>();
+            data = new Dictionary<string, Account>();
             SqlConnection cnn;
             
-            // Estabilish connection with SQL Server
-            cnn = new SqlConnection(connectionString);
+            cnn = new SqlConnection(connetionString);
             cnn.Open();
 
             String SQL = "SELECT * FROM ConferenceMember";
@@ -37,7 +36,7 @@ namespace Proiect_ISS
                     String email = oReader["email"].ToString().Replace(" ", string.Empty);
                     int rank = int.Parse(oReader["rank"].ToString());
 
-                    User u = new User(username, password, name, affiliation, email, rank);
+                    Account u = new Account(username, password, name, affiliation, email, rank);
 
                     data.Add(username, u);
                 }
@@ -47,23 +46,23 @@ namespace Proiect_ISS
             
         }
 
-        public void add(User e)
+        public void add(Account e)
         {
-            using (SqlConnection cnn = new SqlConnection(connectionString))
+            using (SqlConnection cnn = new SqlConnection(connetionString))
             {
                 String SQL = "INSERT INTO ConferenceMember VALUES(@1,@2,@3,@4,@5,@6)";
                 cnn.Open();
                 using (SqlCommand cmd = new SqlCommand(SQL, cnn))
                 {
-                    cmd.Parameters.AddWithValue("@1", e.Username);
-                    cmd.Parameters.AddWithValue("@2", e.Password);
-                    cmd.Parameters.AddWithValue("@3", e.Name);
-                    cmd.Parameters.AddWithValue("@4", e.Affiliation);
-                    cmd.Parameters.AddWithValue("@5", e.Email);
-                    cmd.Parameters.AddWithValue("@6", e.Rank);
+                    cmd.Parameters.AddWithValue("@1", e.username);
+                    cmd.Parameters.AddWithValue("@2", e.password);
+                    cmd.Parameters.AddWithValue("@3", e.name);
+                    cmd.Parameters.AddWithValue("@4", e.affiliation);
+                    cmd.Parameters.AddWithValue("@5", e.email);
+                    cmd.Parameters.AddWithValue("@6", e.rank);
                     cmd.ExecuteNonQuery();
 
-                    data.Add(e.Username, e);
+                    data.Add(e.username, e);
                 }
                 cnn.Close();
             }
@@ -72,7 +71,7 @@ namespace Proiect_ISS
         public void remove(String e)
         {
 
-            using (SqlConnection cnn = new SqlConnection(connectionString))
+            using (SqlConnection cnn = new SqlConnection(connetionString))
             {
                 String SQL = "DELETE FROM ConferenceMember WHERE username=@1";
                 cnn.Open();
@@ -87,40 +86,42 @@ namespace Proiect_ISS
             }
         }
 
-        public void update(User e)
+        public void update(Account e)
         {
-            using (SqlConnection cnn = new SqlConnection(connectionString))
+            using (SqlConnection cnn = new SqlConnection(connetionString))
             {
                 String SQL = "UPDATE ConferenceMember SET password=@2, name=@3, affiliation=@4, email=@5, rank=@6 WHERE username=@1";
                 cnn.Open();
                 using (SqlCommand cmd = new SqlCommand(SQL, cnn))
                 {
-                    cmd.Parameters.AddWithValue("@1", e.Username);
-                    cmd.Parameters.AddWithValue("@2", e.Password);
-                    cmd.Parameters.AddWithValue("@3", e.Name);
-                    cmd.Parameters.AddWithValue("@4", e.Affiliation);
-                    cmd.Parameters.AddWithValue("@5", e.Email);
-                    cmd.Parameters.AddWithValue("@6", e.Rank);
+                    cmd.Parameters.AddWithValue("@1", e.username);
+                    cmd.Parameters.AddWithValue("@2", e.password);
+                    cmd.Parameters.AddWithValue("@3", e.name);
+                    cmd.Parameters.AddWithValue("@4", e.affiliation);
+                    cmd.Parameters.AddWithValue("@5", e.email);
+                    cmd.Parameters.AddWithValue("@6", e.rank);
                     cmd.ExecuteNonQuery();
 
-                    data.Remove(e.Username);
-                    data.Add(e.Username, e);
+                    data.Remove(e.username);
+                    data.Add(e.username, e);
                 }
                 cnn.Close();
             }
+
+            
         }
 
-        public User find(String e)
+        public Account find(String e)
         {
-            foreach (User U in data.Values)
+            foreach (Account U in data.Values)
             {
-                if (U.Username == e)
+                if (U.username == e)
                     return U;
             }
             return null;
         }
 
-        public ICollection<User> findAll()
+        public ICollection<Account> findAll()
         {
             return data.Values;
         }
@@ -128,7 +129,7 @@ namespace Proiect_ISS
         public override string ToString()
         {
             String s = "";
-            foreach(User U in data.Values)
+            foreach(Account U in data.Values)
             {
                 s += U + "\n";
             }
