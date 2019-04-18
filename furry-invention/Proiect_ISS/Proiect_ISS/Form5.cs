@@ -23,6 +23,7 @@ namespace Proiect_ISS
             this.Hide();
             Form2 f2 = new Form2();
             f2.ShowDialog();
+            this.Close();
         }
     }
 }

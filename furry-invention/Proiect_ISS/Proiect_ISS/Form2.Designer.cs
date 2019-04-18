@@ -86,7 +86,10 @@
             this.Controls.Add(this.chooseBtn);
             this.Controls.Add(this.newBtn);
             this.Controls.Add(this.welcomelabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Menu";
             this.ResumeLayout(false);
             this.PerformLayout();

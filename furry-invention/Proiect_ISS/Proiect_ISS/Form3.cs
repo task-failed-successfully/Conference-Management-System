@@ -23,6 +23,7 @@ namespace Proiect_ISS
             this.Hide();
             Form2 f2 = new Form2();
             f2.ShowDialog();
+            this.Close();
         }
 
         private void createBtn_Click(object sender, EventArgs e)
@@ -31,6 +32,7 @@ namespace Proiect_ISS
             this.Hide();
             Form2 f2 = new Form2();
             f2.ShowDialog();
+            this.Close();
         }
     }
 }

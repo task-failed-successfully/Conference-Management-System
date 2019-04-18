@@ -27,6 +27,7 @@ namespace Proiect_ISS
             this.Hide();
             Form3 f3 = new Form3();
             f3.ShowDialog();
+            this.Close();
         }
 
         private void chooseBtn_Click(object sender, EventArgs e)
@@ -34,6 +35,7 @@ namespace Proiect_ISS
             this.Hide();
             Form5 f5 = new Form5();
             f5.ShowDialog();
+            this.Close();
         }
     }
 }
