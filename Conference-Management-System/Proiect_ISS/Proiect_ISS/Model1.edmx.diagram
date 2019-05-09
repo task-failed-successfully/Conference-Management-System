@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d23a8c5197f94942bb12477d0aa7fd53" Name="Diagram1">
+        <EntityTypeShape EntityType="Domain.Account" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Domain.AccountSection" Width="1.5" PointX="7.5" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Domain.Deadline" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Domain.Keyword" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="Domain.Proposal" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Domain.ProposalAccount" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Domain.Review" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Domain.Section" Width="1.5" PointX="5.25" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="Domain.Topic" Width="1.5" PointX="5.25" PointY="9.75" IsExpanded="true" />
+        <AssociationConnector Association="Domain.FK__AccountSect__AID__6477ECF3" ManuallyRouted="false" />
+        <AssociationConnector Association="Domain.FK__ProposalAcc__AID__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="Domain.FK__Review__AID__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="Domain.FK__Section__chair__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="Domain.FK__AccountSect__SID__6383C8BA" ManuallyRouted="false" />
+        <AssociationConnector Association="Domain.FK__ProposalAcc__PID__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="Domain.FK__Review__PID__59FA5E80" ManuallyRouted="false" />
+        <AssociationConnector Association="Domain.ProposalKeyword" ManuallyRouted="false" />
+        <AssociationConnector Association="Domain.ProposalTopic" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
