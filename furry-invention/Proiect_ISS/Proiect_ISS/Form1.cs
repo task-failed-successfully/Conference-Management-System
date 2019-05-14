@@ -44,8 +44,8 @@ namespace Proiect_ISS
             String password = passwordTextBox.Text;
             MessageBox.Show("Moving on");
             this.Hide();
-            Form2 f2 = new Form2();
-            f2.ShowDialog();
+            Form7 f7 = new Form7();
+            f7.ShowDialog();
             this.Close();
         }
     }
