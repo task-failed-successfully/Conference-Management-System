@@ -24,7 +24,10 @@ namespace Proiect_ISS.ui
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            
+            this.Hide();
+            AuthorForm f9 = new AuthorForm(cont, conferenceName);
+            f9.ShowDialog();
+            this.Close();
         }
     }
 }
