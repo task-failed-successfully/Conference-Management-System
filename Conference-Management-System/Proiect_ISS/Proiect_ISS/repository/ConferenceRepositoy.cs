@@ -10,7 +10,7 @@ namespace Proiect_ISS.repository
 {
     public class ConferenceRepository : Repository
     {
-        private string CONNECTION_STRING= @"Data Source=REMUS; Integrated Security=true";
+        private string CONNECTION_STRING= @"Data Source=desktop-uc392eu\sqlexpress; Integrated Security=true";
 
         public void createConference(String name)
         {

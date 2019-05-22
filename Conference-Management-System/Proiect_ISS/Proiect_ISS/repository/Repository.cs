@@ -46,6 +46,13 @@ namespace Proiect_ISS.repository
             return table.Find(id);
         }
 
+        /*
+         * Searches in the Account table for a record with the username equal
+         * to a given parameter.
+         * IN: string, DbSet
+         * OUT: Object
+         * ce returneaza daca nu e gasit?
+         */
         public Object findByName(string name, DbSet table)
         {
             foreach(Object o in table.Local)
@@ -57,6 +64,7 @@ namespace Proiect_ISS.repository
                     return a;
                 }
             }
+            //return null;
             return table.Cast<Account>().FirstOrDefault(e => e.name == name).ID;
         }
 

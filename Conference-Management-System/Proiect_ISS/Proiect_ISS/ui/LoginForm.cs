@@ -29,9 +29,52 @@ namespace Proiect_ISS.ui
         private void loginButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AuthorForm f9 = new AuthorForm(cont, conferenceName);
-            f9.ShowDialog();
+
+            string username = usernameTextBox.Text;
+            string password = passwordTextBox.Text;
+            Object o = cont.findByUsername(username, conferenceName);
+
+            if(true)
+            {
+                MessageBox.Show("Invalid username!");
+                return;
+            }
+
+            Account a = (Account)o;
+
+            if(a.password != password)
+            {
+                MessageBox.Show("Invalid password!");
+                return;
+            }
+            
+            switch(a.affiliation)
+            {
+                case "author":
+                    AuthorForm f1 = new AuthorForm(cont, conferenceName);
+                    f1.ShowDialog();
+                    break;
+
+                case "admin":
+                    AdminForm f2 = new AdminForm(cont, conferenceName);
+                    f2.ShowDialog();
+                    break;
+
+                case "reviewer":
+                    ReviewerForm f3 = new ReviewerForm();
+                    f3.ShowDialog();
+                    break;
+            }
+
             this.Close();
+        }
+
+        private void registerButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            RegisterForm f4 = new RegisterForm(cont, conferenceName);
+            f4.ShowDialog();
+
         }
     }
 }

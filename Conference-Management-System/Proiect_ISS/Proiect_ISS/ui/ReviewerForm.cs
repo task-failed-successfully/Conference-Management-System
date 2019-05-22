@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Proiect_ISS
 {
-    public partial class Form10 : Form
+    public partial class ReviewerForm : Form
     {
-        public Form10()
+        public ReviewerForm()
         {
             InitializeComponent();
 

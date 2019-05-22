@@ -213,5 +213,37 @@ namespace Proiect_ISS.controller
             }
             return res.ToString();
         }
+
+        /*
+         * Returns an Account from the DB which has the given username as
+         * parameter.
+         * IN: string
+         * OUT: 
+         */
+        public Object findByUsername(string username, String dbName)
+        {
+            Entities context = new Entities();
+            context.ChangeDatabase(initialCatalog: dbName);
+            return repos[ACCOUNT_IDENTIFIER].findByName(username, chooseDbSet(ACCOUNT_IDENTIFIER, context));
+        }
+
+        /*
+         * NOT USED. I NEED ACCOUNT Object IN THE FORM, NOT BOOL
+         * dbName is Conference name from Form.
+         */
+        public bool validateUserCredentials(string username, string password, String dbName)
+        {
+            Object o = this.findByUsername(username, dbName);
+            Account a = (Account)o;
+            //Username not valid
+            if (a == null)
+                return false;
+
+            //Password not valid
+            if (a.password != password)
+                return false;
+
+            return true;
+        }
     }
 }
