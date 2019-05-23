@@ -50,22 +50,22 @@ namespace Proiect_ISS.repository
          * Searches in the Account table for a record with the username equal
          * to a given parameter.
          * IN: string, DbSet
-         * OUT: Object
-         * ce returneaza daca nu e gasit?
+         * OUT: Object if found, null otherwise
+         */
+        public Object findByUsername(string username, DbSet table)
+        {
+            return table.Cast<Account>().FirstOrDefault(e => e.username == username);
+        }
+
+        /*
+         * Searches in the Account table for a record with the full name equal
+         * to a given parameter.
+         * IN: string, DbSet
+         * OUT: Object if found, null otherwise
          */
         public Object findByName(string name, DbSet table)
         {
-            foreach(Object o in table.Local)
-            {
-                Account a = (Account) o;
-
-                if (a.name == name)
-                {
-                    return a;
-                }
-            }
-            //return null;
-            return table.Cast<Account>().FirstOrDefault(e => e.name == name).ID;
+            return table.Cast<Account>().FirstOrDefault(e => e.name == name);
         }
 
         public void updateProposal(int fileType, String newData, DbContext context, DbSet table)

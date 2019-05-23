@@ -28,13 +28,11 @@ namespace Proiect_ISS.ui
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
-
             string username = usernameTextBox.Text;
             string password = passwordTextBox.Text;
             Object o = cont.findByUsername(username, conferenceName);
 
-            if(true)
+            if(o == null)
             {
                 MessageBox.Show("Invalid username!");
                 return;
@@ -47,8 +45,8 @@ namespace Proiect_ISS.ui
                 MessageBox.Show("Invalid password!");
                 return;
             }
-            
-            switch(a.affiliation)
+            this.Hide();
+            switch (a.affiliation)
             {
                 case "author":
                     AuthorForm f1 = new AuthorForm(cont, conferenceName);
@@ -64,6 +62,10 @@ namespace Proiect_ISS.ui
                     ReviewerForm f3 = new ReviewerForm();
                     f3.ShowDialog();
                     break;
+
+                default:
+                    MessageBox.Show("Affiliation invalid! Cannot show form.")
+                    break;
             }
 
             this.Close();
@@ -74,7 +76,7 @@ namespace Proiect_ISS.ui
             this.Hide();
             RegisterForm f4 = new RegisterForm(cont, conferenceName);
             f4.ShowDialog();
-
+            this.Close();
         }
     }
 }

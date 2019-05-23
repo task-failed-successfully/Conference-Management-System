@@ -11,6 +11,6 @@ namespace Proiect_ISS.repository
 {
     class AccountRepository : Repository
     {
-
+        
     }
 }

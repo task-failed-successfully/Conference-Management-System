@@ -112,7 +112,8 @@ namespace Proiect_ISS.controller
             foreach (String s in authors)
             {
                 ProposalAccount a = new ProposalAccount();
-                a.AID = (int)repos[1].findByName(s, chooseDbSet(1, context));
+                Account acc = (Account)repos[ACCOUNT_IDENTIFIER].findByName(s, chooseDbSet(1, context));
+                a.AID = acc.ID;
                 a.PID = 1;
 
                 p.ProposalAccounts.Add(a);
@@ -215,16 +216,16 @@ namespace Proiect_ISS.controller
         }
 
         /*
-         * Returns an Account from the DB which has the given username as
-         * parameter.
+         * Returns an Account from the DB which has the given username as the
+         * given parameter.
          * IN: string
-         * OUT: 
+         * OUT: Object(Account)
          */
         public Object findByUsername(string username, String dbName)
         {
             Entities context = new Entities();
             context.ChangeDatabase(initialCatalog: dbName);
-            return repos[ACCOUNT_IDENTIFIER].findByName(username, chooseDbSet(ACCOUNT_IDENTIFIER, context));
+            return repos[ACCOUNT_IDENTIFIER].findByUsername(username, chooseDbSet(ACCOUNT_IDENTIFIER, context));
         }
 
         /*
