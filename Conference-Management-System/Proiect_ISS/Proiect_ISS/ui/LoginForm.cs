@@ -46,6 +46,9 @@ namespace Proiect_ISS.ui
                 return;
             }
             this.Hide();
+
+            //Daca fac o fctie in Controller "validate" care arunca exceptii daca e valid user ul, atunci
+            //nu stiu cum fac rost de 'affiliation' al user-ului. De-aia mai sus primesc un Object/Account
             switch (a.affiliation)
             {
                 case "author":
@@ -64,7 +67,7 @@ namespace Proiect_ISS.ui
                     break;
 
                 default:
-                    MessageBox.Show("Affiliation invalid! Cannot show form.")
+                    MessageBox.Show("Affiliation invalid! Cannot show form.");
                     break;
             }
 
